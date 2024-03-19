@@ -4,12 +4,10 @@ A prototype focused on the movement and UI elements.  See https://classroom.emer
 
 # Third party assets
 
-* Epic arsenal sound effects
+1. Epic Arsenal Essential Elements Demo Packs
 
-* Magic cliffs pixel art environment
+2. Magic cliffs Pixel Art Environment.
 
-* Warped shooting fx
+3. Warped Shooting Fx
 
-* Some 2d spaceships
-
-
+4. 2D Pixel Spaceship - Two Small Ships
