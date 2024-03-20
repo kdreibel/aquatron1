@@ -133,7 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 92848374}
   - component: {fileID: 92848375}
-  m_Layer: 0
+  - component: {fileID: 92848376}
+  - component: {fileID: 92848377}
+  - component: {fileID: 92848378}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,6 +255,76 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &92848376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 32e85ef1f035b436cbdf3ffcc8bd8853, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &92848377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4645c08c3452d4aef9572ed52c8b72df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!50 &92848378
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848373}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &320462451
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +336,7 @@ GameObject:
   - component: {fileID: 320462452}
   - component: {fileID: 320462454}
   - component: {fileID: 320462453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,16 +826,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -815,13 +878,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 47
+  - m_RefCount: 46
     m_Data: {fileID: 11400000, guid: 80b617b5fedab4a29b9470c9bbddf464, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 47
+  - m_RefCount: 46
     m_Data: {fileID: 21300000, guid: 2e4c295fab3d94e2eb53e35cf2cf7112, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 47
+  - m_RefCount: 46
     m_Data:
       e00: 1
       e01: 0
@@ -840,7 +903,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 47
+  - m_RefCount: 46
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1040,7 +1103,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000e997c008a36a7f7e67766f3853cac30c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1095,7 +1158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 748001471}
   - component: {fileID: 748001470}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,9 +1206,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 92848374}
     m_Modifications:
+    - target: {fileID: 1400420817260280, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
       propertyPath: m_Name
       value: ship1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512782934554904, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818141105757828, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4193583667243190, guid: 401d8aca9e846254890399f66cd7de66, type: 3}
       propertyPath: m_LocalPosition.x
