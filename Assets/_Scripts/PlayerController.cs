@@ -20,15 +20,15 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        Vector3 movement = new Vector3(movementX, movementY, 0.0f);
         rb.AddForce(movement * speed);
     }
 
-    private void OnMove(InputValue movementValue)
-    {
+    private void OnMove(InputValue movementValue) {
         Vector2 movementVector = movementValue.Get<Vector2>();
 
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
+
 }

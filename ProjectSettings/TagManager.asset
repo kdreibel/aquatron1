@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - 
   - Parallax bg
   - Parallax fg
   - Skybox
-  - 
+  - Player
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 2122279587
+    locked: 0
   - name: Skybox
     uniqueID: 146839529
     locked: 0
@@ -50,6 +53,6 @@ TagManager:
   - name: Parallax fg
     uniqueID: 214157907
     locked: 0
-  - name: Player
-    uniqueID: 2122279587
+  - name: UI
+    uniqueID: 2973058021
     locked: 0
