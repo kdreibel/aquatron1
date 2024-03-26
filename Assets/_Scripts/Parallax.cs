@@ -2,11 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// See https://www.youtube.com/watch?v=zit45k6CUMk for explanation
+
+/**
+  See https://www.youtube.com/watch?v=zit45k6CUMk for explanation
+  Use the script as follows:
+  * Add an image to be used as the background, as a child of the camera.
+  * Add the script to the image.
+  * Add two duplicate children to the image, move one to the right and one to the left.
+
+*/
+
 public class Parallax : MonoBehaviour
 {
     private float length, startpos;
+
+    [Tooltip("The main camera (should be the parent)")]
     public GameObject cam;
+
+    [Range(0, 1)]
+    [Tooltip("0 moves at full speed, 1 means a fixed background.")]
     public float parallaxEffect;
     
     // Start is called before the first frame update
