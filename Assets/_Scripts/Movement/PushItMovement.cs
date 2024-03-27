@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class PushItMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float movementX;
