@@ -7,41 +7,65 @@ using UnityEngine.InputSystem;
 
 public class FixedMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float movementX;
-    private float movementY;
+    private Rigidbody2D _rb;
+    private float _movementX;
+    private float _movementY;
+    private FacingDirection _facingDirection = FacingDirection.Right;
 
     public float maxVerticalVelocity = 10;
 
     public float maxHorizontalVelocity = 10;
+
+    public GameObject ChangeDirectionEffect;
+    
+    public enum FacingDirection
+    {
+        Left,
+        Right,
+    }
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(movementX, movementY);
-        Quaternion q = rb.gameObject.transform.rotation;
-        if (rb.velocity.x > 0)
+        _rb.velocity = new Vector2(_movementX, _movementY);
+        Quaternion q = _rb.gameObject.transform.rotation;
+        if (_rb.velocity.x > 0 && _facingDirection == FacingDirection.Left)
         {
-            rb.SetRotation(new Quaternion(q.x, q.y, 0, q.w));
+            _rb.SetRotation(new Quaternion(q.x, q.y, 0, q.w));
+            _facingDirection = FacingDirection.Right;
+            OnChangedLeftRightDirection();
         }
-        else
+        else if (_rb.velocity.x < 0 && _facingDirection == FacingDirection.Right)
         {
-            rb.SetRotation(new Quaternion(q.x, q.y, 180, q.w));
+            _rb.SetRotation(new Quaternion(q.x, q.y, 180, q.w));
+            _facingDirection = FacingDirection.Left;
+            OnChangedLeftRightDirection();
+        }
+    }
 
+    private void OnChangedLeftRightDirection()
+    {
+        // Instantiate a Hit6-burst prefab at the player's position
+        if (ChangeDirectionEffect != null)
+        {
+            Instantiate(ChangeDirectionEffect, transform.position, Quaternion.identity);
         }
+        
+        // log a debug message
+        Debug.Log("Changed direction to " + _facingDirection);
     }
 
     private void OnMove(InputValue movementValue) {
         Vector2 movementVector = movementValue.Get<Vector2>();
 
 
-        movementX = ExactVelocityOrZero(movementVector.x, maxHorizontalVelocity);
-        movementY = ExactVelocityOrZero(movementVector.y, maxVerticalVelocity);
+        _movementX = ExactVelocityOrZero(movementVector.x, maxHorizontalVelocity);
+        _movementY = ExactVelocityOrZero(movementVector.y, maxVerticalVelocity);
     }
 
     private static float ExactVelocityOrZero(float y, float maximum)
